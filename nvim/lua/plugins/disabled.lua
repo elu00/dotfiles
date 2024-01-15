@@ -12,7 +12,6 @@ return {
 	{ "lewis6991/gitsigns.nvim", enabled = false },
 	-- linter
 	--{ "mfussenegger/nvim-lint", enabled = false },
-	--{ "L3MON4D3/LuaSnip", enabled = false },
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		--[[enabled = function()

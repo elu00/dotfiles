@@ -1,33 +1,4 @@
--- disable this for now until compiler.nvim updates some things
---[[
 vim.g.CMAKE_BUILD_TYPE = "RelWithDebInfo"
-return {
-	{ -- This plugin
-		"Zeioth/compiler.nvim",
-		cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
-		dependencies = { "stevearc/overseer.nvim" },
-		keys = {
-			{ "<leader>M", "<cmd>CompilerOpen <cr>", desc = "Configure compile options" },
-			{ "<leader>m", "<cmd>CompilerRedo <cr>", desc = "Redo last build" },
-		},
-
-		opts = {},
-	},
-	{ -- The task runner we use
-		"stevearc/overseer.nvim",
-		cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
-		opts = {
-			task_list = {
-				direction = "right",
-				--min_height = 25,
-				--max_height = 25,
-				--default_detail = 1,
-			},
-		},
-	},
-}
---]]
----[[
 return {
 	{
 		"Civitasv/cmake-tools.nvim",
