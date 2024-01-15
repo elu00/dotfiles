@@ -1,0 +1,205 @@
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{newpxtext}
+\usepackage{mathtools}
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage{comment}
+\usepackage{slashed}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\AtBeginDocument{%
+  \let\mathbb\relax
+  \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}%
+}
+
+
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\pnorm}[2]{\left\Vert#1\right\Vert_{L^{#2}}}
+\providecommand{\pnormspace}[3]{\left\Vert#1\right\Vert_{L^{#2}(#3)}}
+\providecommand{\pqnorm}[3]{\left\Vert#1\right\Vert_{L^{#2,#3}}}
+\providecommand{\pqnormspace}[4]{\left\Vert#1\right\VeFrt_{L^{#2,#3}(#4)}}
+\providecommand{\lz}[4]{\left\Vert#1\right\Vert_{L^{#2,#3}\log^{#4}{L}}}
+\providecommand{\lzspace}[5]{\left\Vert#1\rig\ht\Vert_{L^{#2,#3}\log^{#4}{L}(#5)}}
+\providecommand{\wlt}[1]{\pqnorm{#1}{2}{\infty}}
+\providecommand{\Rn}[1]{\mathbb{R}^{#1}}
+\providecommand{\intrn}[1]{\int_{\Rn{n}}#1 \,dx}
+\providecommand{\csubset}{\subset\subset}
+\providecommand{\wnorm}[1]{\lvert \mspace{-1.8mu} \lvert
+\mspace{-1.8mu} \lvert #1 \rvert \mspace{-1.8mu} \rvert
+\mspace{-1.8mu} \rvert_{L^{2,\infty}}}
+
+
+\providecommand{\br}[1]{\langle #1 \rangle}
+\providecommand{\snorm}[2]{\left\Vert#1\right\Vert_{H^{#2}}}
+\providecommand{\snormspace}[3]{\left\Vert#1\right\Vert_{H^{#2}({#3})}}
+\providecommand{\sd}[1]{\mathcal{D}_{#1}}
+\providecommand{\se}[1]{\mathcal{E}_{#1}}
+\providecommand{\sdb}[1]{\bar{\mathcal{D}}_{#1}}
+\providecommand{\seb}[1]{\bar{\mathcal{E}}_{#1}}
+\providecommand{\snorm}[2]{\left\Vert#1\right\Vert_{H^{#2}}}
+\providecommand{\snormspace}[3]{\left\Vert#1\right\Vert_{H^{#2}({#3})}}
+\providecommand{\ns}[1]{\norm{#1}^2}
+\providecommand{\pns}[2]{\norm{#1}^2_{L^{#2}}}
+\providecommand{\dbm}[1]{\bar{D}_m^{#1}}
+\providecommand{\ip}[1]{\left\langle#1 \right\rangle}
+ 
+\providecommand{\jump}[1]{\left\llbracket #1 \right\rrbracket }
+
+\def\wstar{\overset{*}{\rightharpoonup}}
+\def\nab{\nabla}
+\def\dt{\partial_t}
+\def\hal{\frac{1}{2}}
+\def\ep{\varepsilon}
+\def\vchi{\text{\large{$\chi$}}}
+\def\ls{\lesssim}
+\def\p{\partial}
+\def\pa{\partial^\alpha}
+\def\sg{\mathbb{D}}
+\def\db{\bar{D}}
+\def\da{\Delta_{\mathcal{A}}}
+\def\naba{\nab_{\mathcal{A}}}
+\def\diva{\diverge_{\mathcal{A}}}
+\def\Sa{S_{\mathcal{A}}}
+\def\Hsig{{_0}H^1_\sigma(\Omega)}
+\def\Xmod{X/\mspace{-2mu}\simeq }
+
+\def\vn{\vol_n}
+\def\om{\mu^\ast}
+
+\def\lb{\log_b}
+
+%field stuff
+\def\F{\mathbb{F}}
+\def\fxx{\F\mspace{-3mu}\jump{\X}}
+\def\fl{\F\mspace{-.5mu}(\mspace{-2mu}(\X)\mspace{-2mu})}
+\def\afk{\mathbb{A}(\mathbb{K},\mathbb{F})}
+\def\cf{\mathbb{C}(\F)}
+
+
+\def\mc{\mathcal}
+\def\a{\mathcal{A}}
+\def\b{\mathcal{B}}
+\def\c{\mathcal{C}}
+\def\d{\mathscr{D}}
+\def\e{\mathscr{E}}
+\def\f{\mathcal{F}}
+\def\g{\mathcal{G}}
+\def\h{\mathcal{H}}
+
+\def\s{\mathscr{S}}
+\def\i{\mathcal{I}}
+\def\n{\mathcal{N}}
+\def\x{\mathcal{X}}
+\def\y{\mathcal{Y}}
+\def\z{\mathcal{Z}}
+\def\t{\mathcal{T}}
+
+\def\A{\mathbb{A}}
+\def\C{\mathbb{C}}
+\def\L{\mathcal{L}}
+\def\K{\mathbb{K}}
+\def\N{\mathbb{N}}
+\def\P{\mathbb{P}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\T{\mathbb{T}}
+\def\E{\mathbb{E}}
+\def\Z{\mathbb{Z}}
+
+\def\hf{\mathfrak{H}}
+\def\ff{\mathfrak{F}}
+\def\lf{\mathfrak{L}}
+\def\bf{\mathfrak{B}}
+\def\mf{\mathfrak{M}}
+\def\pf{\mathfrak{P}}
+
+
+\def\sr{\riem}
+\def\G{\mathcal{G}}
+ 
+
+
+\def\X{\mathbf{X}}
+
+\def\st{\;\vert\;}
+
+%avg integral
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
+\vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
+\def\intbar{\Xint-}
+
+%upper and lower ints
+\def\uint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\diverge}{div}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\hes}{Hess}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\IM}{Im}
+\DeclareMathOperator{\RE}{Re}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\step}{Step}
+\DeclareMathOperator{\reg}{Reg}
+\DeclareMathOperator{\dst}{dst}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\riem}{Riem}
+\DeclareMathOperator{\leb}{Leb}
+\DeclareMathOperator{\aeleb}{a.e.-Leb}
+
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}[lem]{Corollary}
+\newtheorem{prop}[lem]{Proposition}
+\newtheorem{thm}[lem]{Theorem}
+\newtheorem{remark}[lem]{Remark}
+
+
+
+\newtheorem*{prop*}{Proposition}
+\newtheorem*{thm*}{Theorem}
+\newtheorem*{def*}{Definition}
+\newtheorem*{lem*}{Lemma}
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+%\pagestyle{fancy}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+
+
