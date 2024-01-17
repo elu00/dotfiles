@@ -14,6 +14,15 @@ return {
 		end,
 	},
 	{
+		"nvim-treesitter/nvim-treesitter-context",
+		opts = {
+			max_lines = 2,
+			on_attach = function(bufnr)
+				return vim.bo[bufnr].filetype ~= "tex"
+			end,
+		},
+	},
+	{
 		"lervag/vimtex",
 		lazy = false,
 		init = function()

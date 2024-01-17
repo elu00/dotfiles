@@ -10,18 +10,8 @@ return {
 	{ "RRethy/vim-illuminate", enabled = false },
 	-- inline git status
 	{ "lewis6991/gitsigns.nvim", enabled = false },
+	--{ "echasnovski/mini.comment", enabled = false },
+	--{ "JoosepAlviste/nvim-ts-context-commentstring", enabled = false },
 	-- linter
 	--{ "mfussenegger/nvim-lint", enabled = false },
-	{
-		"nvim-treesitter/nvim-treesitter-context",
-		--[[enabled = function()
-			if vim.bo.filetype == "tex" then
-				-- disable for .tex files
-				return false
-			end
-			return true
-		end,]]
-		--
-		enabled = false,
-	},
 }

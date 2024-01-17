@@ -2,13 +2,6 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
-			--[[
-			ignore_install = { "latex" },
-			highlight = {
-				enable = true,
-				disable = { "latex" },
-			},
-            --]]
 			ensure_installed = {
 				"bash",
 				"cpp",
