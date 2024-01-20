@@ -64,7 +64,7 @@ return {
 			}
 
 			vim.g.vimtex_compiler_latexmk_engines = {
-				_ = "-lualatex",
+				_ = "-pdflatex",
 				pdflatex = "-pdflatex",
 				lualatex = "-lualatex",
 				xelatex = "-xelatex",
