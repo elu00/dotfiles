@@ -126,7 +126,10 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 
-		dependencies = { "micangl/cmp-vimtex", "amarakon/nvim-cmp-lua-latex-symbols" },
+		dependencies = {
+			--"micangl/cmp-vimtex",
+			"amarakon/nvim-cmp-lua-latex-symbols",
+		},
 		opts = function(_, opts)
 			local has_words_before = function()
 				unpack = unpack or table.unpack
