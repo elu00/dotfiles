@@ -12,8 +12,8 @@ https://github.com/settings/keys
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
 ```
-## p10k setup
+## zsh setup
 ```
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+echo 'source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh' >>~/.zshrc
 ```

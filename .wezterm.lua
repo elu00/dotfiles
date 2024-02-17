@@ -16,6 +16,10 @@ config.hide_tab_bar_if_only_one_tab = true
 
 config.font_size = 18.0
 config.default_prog = { "zsh", "-l" }
+if package.config:sub(1, 1) == "\\" then
+	config.default_domain = "WSL:Ubuntu-18.04"
+end
+config.default_cursor_style = "SteadyBar"
 
--- and finally, return the configuration to wezterm
+-- womais
 return config
