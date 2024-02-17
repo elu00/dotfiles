@@ -15,7 +15,7 @@ config.font = wezterm.font_with_fallback({
 config.hide_tab_bar_if_only_one_tab = true
 
 config.font_size = 18.0
-config.default_prog = { "zsh" }
+config.default_prog = { "zsh", "-l" }
 
 -- and finally, return the configuration to wezterm
 return config
