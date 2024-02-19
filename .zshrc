@@ -62,8 +62,11 @@ function make_format() {
 autoload -U compinit colors zcalc
 compinit -d
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[path]=none
-ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+ZSH_HIGHLIGHT_STYLES[path]='fg=#cdd6f4'
+ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=#f38ba8'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=#cdd6f4'
+ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]='fg=#f38ba8'
+
 colors
 
 # ignore auxilliary tex files in nvim autocomplete

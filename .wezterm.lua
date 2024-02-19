@@ -7,7 +7,7 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "GruvboxDarkHard"
 config.font = wezterm.font_with_fallback({
 	"Iosevka Term SS04",
 	{ family = "Symbols Nerd Font Mono", scale = 0.6 },
@@ -20,6 +20,8 @@ if package.config:sub(1, 1) == "\\" then
 	config.default_domain = "WSL:Ubuntu-18.04"
 end
 config.default_cursor_style = "SteadyBar"
+config.max_fps = 160
+--config.window_decorations = "RESIZE"
 
 -- womais
 return config
