@@ -17,3 +17,9 @@ sudo apt update
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 echo 'source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh' >>~/.zshrc
 ```
+## tex stuff
+```
+sudo cpan YAML::Tiny
+sudo cpan File::HomeDir
+```
+
