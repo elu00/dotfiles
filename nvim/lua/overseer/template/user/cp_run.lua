@@ -9,7 +9,7 @@ return {
 			}
 		else
 			return {
-				cmd = { "g++", "-std=c++17", file, "&&", "./a.out", "<", "meme.txt" },
+				cmd = { "g++", "-std=c++17", "-g", file, "&&", "./a.out", "<", "meme.txt" },
 			}
 		end
 	end,
