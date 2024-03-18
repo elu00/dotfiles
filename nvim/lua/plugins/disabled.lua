@@ -9,7 +9,7 @@ return {
 	{ "RRethy/vim-illuminate", enabled = false },
 	-- inline git status
 	{ "lewis6991/gitsigns.nvim", enabled = false },
-	{ "JoosepAlviste/nvim-ts-context-commentstring", enabled = false },
+	--{ "JoosepAlviste/nvim-ts-context-commentstring", enabled = false },
 	{ "windwp/nvim-ts-autotag", enabled = false },
 	--------------List of all plugins for convenient disabling
 	--{ "folke/noice.nvim", enabled = false },
