@@ -1,13 +1,24 @@
 return {
 	{
+		"vhyrro/luarocks.nvim",
+		priority = 1000, -- We'd like this plugin to load first out of the rest
+		config = true, -- This automatically runs `require("luarocks-nvim").setup()`
+	},
+	{
 		"nvim-neorg/neorg",
-		build = ":Neorg sync-parsers",
 		-- tag = "*",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = { "luarocks.nvim" },
+		--version = "v7.0.0",
 		config = function()
 			require("neorg").setup({
 				load = {
-					["core.defaults"] = {}, -- Loads default behaviour
+					["core.defaults"] = {
+						config = {
+							disable = {
+								"core.todo-introspector",
+							},
+						},
+					}, -- Loads default behaviour
 					["core.concealer"] = {}, -- Adds pretty icons to your documents
 					["core.dirman"] = { -- Manages Neorg workspaces
 						config = {

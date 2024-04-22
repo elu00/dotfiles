@@ -11,6 +11,7 @@ return {
 	{ "lewis6991/gitsigns.nvim", enabled = false },
 	--{ "JoosepAlviste/nvim-ts-context-commentstring", enabled = false },
 	{ "windwp/nvim-ts-autotag", enabled = false },
+	{ "nvim-treesitter/nvim-treesitter-context", enabled = false },
 	--------------List of all plugins for convenient disabling
 	--{ "folke/noice.nvim", enabled = false },
 	--[[
@@ -21,7 +22,6 @@ return {
 	{ "mfussenegger/nvim-lint", enabled = false },
 	{ "windwp/nvim-cmp", enabled = false },
 	{ "nvim-treesitter/nvim-treesitter", enabled = false },
-	{ "nvim-treesitter/nvim-treesitter-context", enabled = false },
 	{ "neovim/nvim-lspconfig", enabled = false },
 	{ "tpope/vim-repeat", enabled = false },
 	{ "folke/todo-comments.nvim", enabled = false },

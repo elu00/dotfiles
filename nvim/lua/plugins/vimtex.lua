@@ -22,6 +22,7 @@ return {
 			on_attach = function(bufnr)
 				return vim.bo[bufnr].filetype ~= "tex"
 			end,
+			separator = nil,
 		},
 	},
 	{
