@@ -6,6 +6,8 @@ return {
 				"bash",
 				"cpp",
 				"html",
+				"javascript",
+				"jsdoc",
 				"json",
 				"lua",
 				"markdown",

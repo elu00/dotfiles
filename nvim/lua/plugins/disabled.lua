@@ -1,5 +1,12 @@
 return {
+	--[[{
+		"nvim-lspconfig",
+		opts = {
+			inlay_hints = { enabled = false },
+		},
+	},--]]
 	-- pair things
+
 	{ "echasnovski/mini.pairs", enabled = false },
 	-- Inline error messages/warnings
 	--{ "folke/trouble.nvim", enabled = false },

@@ -1,5 +1,5 @@
 return {
-	{
+	--[[{
 		"L3MON4D3/LuaSnip",
 		keys = function()
 			return {}
@@ -122,7 +122,8 @@ return {
 			)
 			ls.add_snippets("cpp", { superscriptSnippet, subscriptSnippet })
 		end,
-	},
+	},]]
+	--
 	{
 		"hrsh7th/nvim-cmp",
 
@@ -138,26 +139,17 @@ return {
 					and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 			end
 
-			local luasnip = require("luasnip")
 			local cmp = require("cmp")
 
-			opts.sources = cmp.config.sources(
-				vim.list_extend(opts.sources, { { name = "vimtex" }, { name = "lua-latex-symbols" } })
-			)
-			opts.completion = {
-				completeopt = "menu,menuone,noinsert,noselect,preview",
-			}
-
 			opts.mapping = vim.tbl_extend("force", opts.mapping, {
-				["<CR>"] = cmp.mapping.confirm({ select = false }),
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						-- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
 						cmp.select_next_item()
-					-- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-					-- this way you will only jump inside the snippet region
-					elseif luasnip.expand_or_jumpable() then
-						luasnip.expand_or_jump()
+					elseif vim.snippet.active({ direction = 1 }) then
+						vim.schedule(function()
+							vim.snippet.jump(1)
+						end)
 					elseif has_words_before() then
 						cmp.complete()
 					else
@@ -167,8 +159,10 @@ return {
 				["<S-Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_prev_item()
-					elseif luasnip.jumpable(-1) then
-						luasnip.jump(-1)
+					elseif vim.snippet.active({ direction = -1 }) then
+						vim.schedule(function()
+							vim.snippet.jump(-1)
+						end)
 					else
 						fallback()
 					end
