@@ -51,11 +51,12 @@ return {
 			keys[#keys + 1] = { "K", false }
 		end,
 	},
-	{
+	--[[{
 		"chrisgrieser/nvim-origami",
 		event = "BufReadPost", -- later will not save folds
 		opts = true,
-	},
+	},]]
+	--
 
 	{ -- better statuscolumn
 		"luukvbaal/statuscol.nvim",
@@ -121,8 +122,12 @@ return {
 
 			return {
 				fold_virt_text_handler = handler,
-				provider_selector = function()
-					return { "treesitter", "indent" }
+				provider_selector = function(bufnr, filetype, buftype)
+					if filetype == "tex" then
+						return ""
+					else
+						return { "treesitter", "indent" }
+					end
 				end,
 				open_fold_hl_timeout = 400,
 				close_fold_kinds_for_ft = { "imports", "comment" },
