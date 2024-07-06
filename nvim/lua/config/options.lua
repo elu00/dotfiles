@@ -5,6 +5,7 @@ vim.opt.relativenumber = false
 vim.opt.conceallevel = 2
 vim.opt.undofile = false
 vim.opt.clipboard = ""
+vim.opt.spell = true
 vim.opt.linebreak = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
