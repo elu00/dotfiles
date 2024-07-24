@@ -30,5 +30,7 @@ end
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
+vim.g.lazyvim_python_lsp = "ruff"
+vim.g.lazyvim_python_ruff = "ruff"
 --vim.opt.foldmethod = "syntax"
 --vim.diagnostic.config({ virtual_text = false, virtual_lines = false })
