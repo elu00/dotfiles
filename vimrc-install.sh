@@ -5,7 +5,7 @@ fi
 if [ -f ~/.config/nvim/lua/plugins/conform.lua ]; then
     rm ~/.config/nvim/lua/plugins/conform.lua
 fi
-if [ -f ~/.config/nvim/lua/plugins/toggleterm.lua]; then
+if [ -f ~/.config/nvim/lua/plugins/toggleterm.lua ]; then
     rm ~/.config/nvim/lua/plugins/toggleterm.lua
 fi
 
