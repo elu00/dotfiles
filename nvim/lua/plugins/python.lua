@@ -47,6 +47,7 @@ return {
 		opts = {
 			handlers = {
 				python = function() end,
+				codelldb = function() end,
 			},
 		},
 	},
