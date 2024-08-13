@@ -50,7 +50,7 @@ alias gitu='git add . && git commit && git push'
 
 alias python='python3'
 alias pip='pip3'
-alias t='nvim -c "Neorg workspace notes"'
+alias t='nvim ~/math/notes/index.norg'
 alias update='git add . && git commit -m "stuff" && git push'
 function dollar_switch () {
     perl -077pi.bak -e 's/(\s)\$\$(.+?)\$\$/\1\\[\2\\]/sg' ${1} && perl -077pi.bak -e 's/(\s)\$(.+?)\$/\1\\(\2\\)/sg' ${1}
