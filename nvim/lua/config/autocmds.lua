@@ -9,11 +9,10 @@
 	end,
 })
 --]]
---[[
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "norg" },
 	callback = function()
-		vim.bo.formatoptions = "tcqj"
+		vim.opt.spell = false
+		--vim.bo.formatoptions = "tcqj"
 	end,
 })
---]]
