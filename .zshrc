@@ -70,7 +70,7 @@ ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]='fg=#f38ba8'
 colors
 
 # ignore auxilliary tex files in nvim autocomplete
-zstyle ':completion:*:*:nvim:*' file-patterns '^*.(aux|fdb_latexmk|fls|synctex.gz|log|pdf|toc|bbl|blg|out|xdv):source-files' '*:all-files'
+zstyle ':completion:*:*:nvim:*' file-patterns '^*.(aux|fdb_latexmk|fls|synctex.gz|log|pdf|toc|bcf|bbl|blg|out|xdv|run.xml):source-files' '*:all-files'
 
 cdpath+="/home/elu/math"
 cdpath+="/home/elu/repos"
