@@ -12,7 +12,7 @@ return {
 		},
 		config = function()
 			require("overseer").setup({
-				strategy = "toggleterm",
+				strategy = { "toggleterm", quit_on_exit = "success" },
 				task_list = {
 					direction = "right",
 				},

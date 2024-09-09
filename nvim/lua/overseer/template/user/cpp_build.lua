@@ -5,10 +5,6 @@ return {
 		local file = vim.fn.expand("%:p")
 		return {
 			cmd = { "g++", "-std=c++17", "-g", file },
-			postDebugTask = function()
-				local dap = require("dap")
-				dap.continue()
-			end,
 		}
 	end,
 	condition = {
