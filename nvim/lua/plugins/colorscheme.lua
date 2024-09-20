@@ -25,7 +25,8 @@ return {
 					latte = {
 						rosewater = "#c14a4a",
 						flamingo = "#c14a4a",
-						red = "#c14a4a",
+						--red = "#c14a4a",
+						red = "#fb4934",
 						maroon = "#c14a4a",
 						pink = "#945e80",
 						mauve = "#945e80",
