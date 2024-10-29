@@ -75,6 +75,7 @@ return {
 			}
 			vim.g.vimtex_syntax_custom_cmds_with_concealed_delims = {
 				{ name = "ip", mathmode = 1, cchar_open = "⟨", cchar_close = "⟩" },
+				{ name = "norm", mathmode = 1, cchar_open = "‖", cchar_close = "‖" },
 				{ name = "np", mathmode = 1, cchar_open = "(", cchar_close = ")" },
 			}
 			-- add which-key mapping descriptions for VimTex
