@@ -72,9 +72,14 @@ return {
 			windows = {
 				autocomplete = {
 					draw = function(ctx)
+						local MiniIcons = require("mini.icons")
 						local source = ctx.item.source_name
+						local label = ctx.item.label
 						local icon = source == "LSP" and MiniIcons.get("lsp", ctx.kind)
-							or source == "Path" and MiniIcons.get("directory", ctx.item.label)
+							or source == "Path" and (label:match("%.[^/]+$") and MiniIcons.get("file", label) or MiniIcons.get(
+								"directory",
+								ctx.item.label
+							))
 							or source == "codeium" and MiniIcons.get("lsp", "event")
 							or ctx.kind_icon
 						return {
