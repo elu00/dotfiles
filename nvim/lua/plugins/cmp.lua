@@ -71,6 +71,7 @@ return {
 			nerd_font_variant = "normal",
 			windows = {
 				autocomplete = {
+					border = "rounded",
 					draw = function(ctx)
 						local MiniIcons = require("mini.icons")
 						local source = ctx.item.source_name
