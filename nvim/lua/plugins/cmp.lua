@@ -1,49 +1,74 @@
 return {
 	{
 		"hrsh7th/nvim-cmp",
-
+		enabled = false,
+	},
+	{
+		"saghen/blink.cmp",
 		dependencies = {
-			--"micangl/cmp-vimtex",
-			"amarakon/nvim-cmp-lua-latex-symbols",
+			-- add blink.compat to dependencies
+			{ "saghen/blink.compat", version = "event", opts = {
+				enable_events = true,
+			} },
+			{
+				"Exafunction/codeium.nvim",
+				cmd = "Codeium",
+				build = ":Codeium Auth",
+				opts = {},
+			},
 		},
-		opts = function(_, opts)
-			local has_words_before = function()
-				unpack = unpack or table.unpack
-				local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-				return col ~= 0
-					and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-			end
+		event = "BufReadPre",
+		version = "v0.*", -- REQUIRED release tag to download pre-built binaries
+		-- https://github.com/chrisgrieser/.config/blob/main/nvim/lua/plugins/blink-cmp.lua
 
-			local cmp = require("cmp")
+		---@module "blink.cmp"
+		---@type blink.cmp.Config
+		opts = {
+			keymap = {
+				preset = "enter",
+				["<Tab>"] = {
+					function(cmp)
+						if cmp.is_in_snippet() then
+							return cmp.accept()
+						else
+							return cmp.select_next()
+						end
+					end,
+					"snippet_forward",
+					"fallback",
+				},
+			},
+			sources = {
+				completion = {
+					enabled_providers = { "lsp", "path", "snippets", "buffer", "codeium" },
+				},
+				providers = {
+					codeium = {
+						name = "codeium", -- IMPORTANT: use the same name as you would for nvim-cmp
+						module = "blink.compat.source",
 
-			opts.mapping = vim.tbl_extend("force", opts.mapping, {
-				["<Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						-- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
-						cmp.select_next_item()
-					elseif vim.snippet.active({ direction = 1 }) then
-						vim.schedule(function()
-							vim.snippet.jump(1)
-						end)
-					elseif has_words_before() then
-						cmp.complete()
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-				["<S-Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_prev_item()
-					elseif vim.snippet.active({ direction = -1 }) then
-						vim.schedule(function()
-							vim.snippet.jump(-1)
-						end)
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-			})
-		end,
+						-- all blink.cmp source config options work as normal:
+						score_offset = 3,
+						max_items = 4,
+
+						opts = {
+							-- options passed to the completion source
+							-- equivalent to `option` field of nvim-cmp source config
+						},
+					},
+				},
+			},
+			trigger = {
+				completion = {
+					keyword_range = "full", -- full|prefix
+				},
+			},
+			--[[highlight = {
+				use_nvim_cmp_as_default = true,
+			},]]
+			--
+			nerd_font_variant = "normal",
+		},
 	},
 	{
 		"folke/noice.nvim",

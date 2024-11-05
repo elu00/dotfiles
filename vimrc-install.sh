@@ -14,3 +14,4 @@ fi
 
 cp nvim/init.lua ~/.config/nvim/
 cp -r nvim/lua ~/.config/nvim
+# cp -r nvim/after ~/.config/nvim

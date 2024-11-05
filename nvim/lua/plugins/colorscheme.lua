@@ -232,6 +232,9 @@ return {
 							TSVariable = { fg = colors.text },
 							TSVariableBuiltin = { fg = colors.mauve },
 
+							BlinkCmpMenu = { bg = colors.surface0 },
+							BlinkCmpDoc = { bg = colors.surface1 },
+
 							["@annotation"] = { link = "TSAnnotation" },
 							["@attribute"] = { link = "TSAttribute" },
 							["@boolean"] = { link = "TSBoolean" },
@@ -348,6 +351,10 @@ return {
 							LineNr = { fg = colors.surface1 },
 						}
 					end,
+				},
+				integrations = {
+					blink_cmp = true,
+					which_key = false,
 				},
 			})
 		end,
