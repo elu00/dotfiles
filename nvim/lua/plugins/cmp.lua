@@ -37,6 +37,7 @@ return {
 					"snippet_forward",
 					"fallback",
 				},
+				["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
 			},
 			sources = {
 				completion = {
@@ -68,6 +69,33 @@ return {
 			},]]
 			--
 			nerd_font_variant = "normal",
+			windows = {
+				autocomplete = {
+					draw = function(ctx)
+						local source = ctx.item.source_name
+						local icon = source == "LSP" and MiniIcons.get("lsp", ctx.kind)
+							or source == "Path" and MiniIcons.get("directory", ctx.item.label)
+							or source == "codeium" and MiniIcons.get("lsp", "event")
+							or ctx.kind_icon
+						return {
+							" ",
+							{ icon, ctx.icon_gap, hl_group = "BlinkCmpKind" .. ctx.kind },
+							{
+								ctx.label,
+								ctx.kind == "Snippet" and "~" or "",
+								(ctx.item.labelDetails and ctx.item.labelDetails.detail)
+										and ctx.item.labelDetails.detail
+									or "",
+								fill = true,
+								hl_group = ctx.deprecated and "BlinkCmpLabelDeprecated" or "BlinkCmpLabel",
+								max_width = 80,
+							},
+							" ",
+						}
+					end,
+				},
+				ghost_text = { enabled = true },
+			},
 		},
 	},
 	{
