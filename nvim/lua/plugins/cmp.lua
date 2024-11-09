@@ -1,9 +1,5 @@
 return {
 	{
-		"hrsh7th/nvim-cmp",
-		enabled = false,
-	},
-	{
 		"saghen/blink.cmp",
 		dependencies = {
 			-- add blink.compat to dependencies
@@ -17,12 +13,6 @@ return {
 				opts = {},
 			},
 		},
-		event = "BufReadPre",
-		version = "v0.*", -- REQUIRED release tag to download pre-built binaries
-		-- https://github.com/chrisgrieser/.config/blob/main/nvim/lua/plugins/blink-cmp.lua
-
-		---@module "blink.cmp"
-		---@type blink.cmp.Config
 		opts = {
 			keymap = {
 				preset = "enter",
@@ -59,30 +49,13 @@ return {
 					},
 				},
 			},
-			trigger = {
-				completion = {
-					keyword_range = "full", -- full|prefix
-				},
-			},
-			--[[highlight = {
-				use_nvim_cmp_as_default = true,
-			},]]
-			--
-			nerd_font_variant = "normal",
 			windows = {
 				autocomplete = {
 					border = "rounded",
 					draw = function(ctx)
 						local MiniIcons = require("mini.icons")
 						local source = ctx.item.source_name
-						local label = ctx.item.label
-						local icon = source == "LSP" and MiniIcons.get("lsp", ctx.kind)
-							or source == "Path" and (label:match("%.[^/]+$") and MiniIcons.get("file", label) or MiniIcons.get(
-								"directory",
-								ctx.item.label
-							))
-							or source == "codeium" and MiniIcons.get("lsp", "event")
-							or ctx.kind_icon
+						local icon = source == "codeium" and MiniIcons.get("lsp", "event") or ctx.kind_icon
 						return {
 							" ",
 							{ icon, ctx.icon_gap, hl_group = "BlinkCmpKind" .. ctx.kind },
@@ -100,7 +73,6 @@ return {
 						}
 					end,
 				},
-				ghost_text = { enabled = true },
 			},
 		},
 	},
