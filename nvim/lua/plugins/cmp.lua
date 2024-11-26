@@ -52,26 +52,6 @@ return {
 			windows = {
 				autocomplete = {
 					border = "rounded",
-					draw = function(ctx)
-						local MiniIcons = require("mini.icons")
-						local source = ctx.item.source_name
-						local icon = source == "codeium" and MiniIcons.get("lsp", "event") or ctx.kind_icon
-						return {
-							" ",
-							{ icon, ctx.icon_gap, hl_group = "BlinkCmpKind" .. ctx.kind },
-							{
-								ctx.label,
-								ctx.kind == "Snippet" and "~" or "",
-								(ctx.item.labelDetails and ctx.item.labelDetails.detail)
-										and ctx.item.labelDetails.detail
-									or "",
-								fill = true,
-								hl_group = ctx.deprecated and "BlinkCmpLabelDeprecated" or "BlinkCmpLabel",
-								max_width = 80,
-							},
-							" ",
-						}
-					end,
 				},
 			},
 		},
