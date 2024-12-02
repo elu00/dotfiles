@@ -13,7 +13,7 @@ require("lazy").setup({
 		-- import any extras modules here
 		{ import = "lazyvim.plugins.extras.coding.blink" },
 		{ import = "lazyvim.plugins.extras.ai.codeium" },
-		{ import = "lazyvim.plugins.extras.editor.leap" },
+		--{ import = "lazyvim.plugins.extras.editor.leap" },
 		--{ import = "lazyvim.plugins.extras.lang.tex" },
 		--{ import = "lazyvim.plugins.extras.lang.cmake" },
 		{ import = "lazyvim.plugins.extras.dap.core" },

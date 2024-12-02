@@ -12,7 +12,7 @@ return {
 	-- Inline error messages/warnings
 	--{ "folke/trouble.nvim", enabled = false },
 	-- Faster search navigation?
-	{ "folke/flash.nvim", enabled = false },
+	--{ "folke/flash.nvim", enabled = false },
 	-- highlight copies of the current word
 	{ "RRethy/vim-illuminate", enabled = false },
 	-- inline git status
