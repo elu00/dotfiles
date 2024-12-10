@@ -5,13 +5,7 @@ return {
 			keymap = {
 				preset = "enter",
 				["<Tab>"] = {
-					function(cmp)
-						if cmp.is_in_snippet() then
-							return cmp.accept()
-						else
-							return cmp.select_next()
-						end
-					end,
+					"select_next",
 					"snippet_forward",
 					"fallback",
 				},

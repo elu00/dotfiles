@@ -5,7 +5,7 @@ return {
 		local file = vim.fn.expand("%:p")
 		if vim.bo.filetype == "python" then
 			return {
-				cmd = { "python3", file, "<", "meme.txt" },
+				cmd = { "pypy3", file, "<", "meme.txt" },
 			}
 		else
 			return {
