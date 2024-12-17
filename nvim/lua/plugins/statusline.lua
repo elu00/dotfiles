@@ -1,4 +1,3 @@
-local fg = LazyVim.ui.fg
 -- https://github.com/lkhphuc/dotfiles/blob/e49b9af0f67dee78c177f8f9dbbe291d76007479/nvim/lua/plugins/ui.lua?plain=1#L78
 return {
 	{
@@ -23,7 +22,9 @@ return {
 						cond = function()
 							return package.loaded["noice"] and require("noice").api.status.command.has()
 						end,
-						color = LazyVim.ui.fg("Statement"),
+						color = function()
+							return { fg = Snacks.util.color("Statement") }
+						end,
 					},
 					{
 						function()
@@ -32,7 +33,9 @@ return {
 						cond = function()
 							return package.loaded["noice"] and require("noice").api.status.mode.has()
 						end,
-						color = LazyVim.ui.fg("Constant"),
+						color = function()
+							return { fg = Snacks.util.color("Constant") }
+						end,
 					},
 					{
 						function()
@@ -41,7 +44,9 @@ return {
 						cond = function()
 							return package.loaded["dap"] and require("dap").status() ~= ""
 						end,
-						color = LazyVim.ui.fg("Debug"),
+						color = function()
+							return { fg = Snacks.util.color("Debug") }
+						end,
 					},
 				}, vim.list_extend(opts.sections.lualine_y, {
 					{ --terminal
@@ -51,7 +56,9 @@ return {
 						cond = function()
 							return vim.o.buftype == "terminal"
 						end,
-						color = fg("Constant"),
+						color = function()
+							return { fg = Snacks.util.color("Constant") }
+						end,
 					},
 				})
 		end,
