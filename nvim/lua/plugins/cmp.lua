@@ -11,8 +11,8 @@ return {
 				},
 				["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
 			},
-			windows = {
-				autocomplete = {
+			completion = {
+				menu = {
 					border = "rounded",
 				},
 			},
