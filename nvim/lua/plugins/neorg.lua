@@ -1,5 +1,13 @@
 return {
 	{
+		"echasnovski/mini.icons",
+		opts = {
+			filetype = {
+				["norg"] = { glyph = "󰊢" },
+			},
+		},
+	},
+	{
 		"nvim-neorg/neorg",
 		-- tag = "*",
 		--version = "v7.0.0",

@@ -17,7 +17,7 @@ return {
 						name = "debug",
 						program = "${file}",
 						console = "integratedTerminal",
-						args = { "womais" },
+						args = { "redirstdin" },
 						-- ... more options, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
 					},
 				}
