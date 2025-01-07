@@ -1,14 +1,12 @@
 return {
 	{
 		"mfussenegger/nvim-dap",
+		lazy = true,
 		dependencies = {
 			"mfussenegger/nvim-dap-python",
+			lazy = true,
 			config = function()
-				if vim.fn.has("win32") == 1 then
-					require("dap-python").setup(LazyVim.get_pkg_path("debugpy", "/venv/Scripts/pythonw.exe"))
-				else
-					require("dap-python").setup(LazyVim.get_pkg_path("debugpy", "/venv/bin/python"))
-				end
+				require("dap-python").setup(LazyVim.get_pkg_path("debugpy", "venv/bin/python"))
 				local dap = require("dap")
 				dap.configurations.python = {
 					{
@@ -48,17 +46,4 @@ return {
 			},
 		},
 	},
-	{
-		"hrsh7th/nvim-cmp",
-		opts = function(_, opts)
-			opts.auto_brackets = opts.auto_brackets or {}
-			table.insert(opts.auto_brackets, "python")
-		end,
-	},
-	--[[
-	{
-		"theHamsta/nvim-dap-virtual-text",
-		enabled = false,
-	},
-    --]]
 }
