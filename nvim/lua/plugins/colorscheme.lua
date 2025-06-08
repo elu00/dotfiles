@@ -1,5 +1,5 @@
 return {
-	{
+	--[[{
 		"ellisonleao/gruvbox.nvim",
 		lazy = false,
 		config = function()
@@ -10,6 +10,8 @@ return {
 			})
 		end,
 	},
+    ]]
+	--
 	-- modified from https://github.com/catppuccin/nvim/discussions/323#discussioncomment-5287724
 	{
 		"catppuccin/nvim",
