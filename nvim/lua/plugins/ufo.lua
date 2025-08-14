@@ -28,12 +28,14 @@ local function foldTextFormatter(virtText, lnum, endLnum, width, truncate)
 end
 
 return {
-	{
+	--[[{
 		"karb94/neoscroll.nvim",
 		config = function()
 			require("neoscroll").setup({})
 		end,
 	},
+    ]]
+	--
 	{
 		"neovim/nvim-lspconfig",
 		optional = true,
