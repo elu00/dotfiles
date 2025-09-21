@@ -305,6 +305,6 @@ add-zsh-hook precmd mzc_termsupport_cwd
 
 # File and Dir colors for ls and other outputs
 export LS_OPTIONS='--color=auto'
-eval "$(dircolors -b)"
+if [[ -x $(command -v dircolors) ]]; then eval $(dircolors -b); fi
 alias ls='ls $LS_OPTIONS'
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh || [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
