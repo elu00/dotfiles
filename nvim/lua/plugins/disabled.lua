@@ -8,7 +8,7 @@ return {
 	-- pair things
 
 	--{ "garymjr/nvim-snippets", enabled = false },
-	{ "echasnovski/mini.pairs", enabled = false },
+	{ "nvim-mini/mini.pairs", enabled = false },
 	-- Inline error messages/warnings
 	--{ "folke/trouble.nvim", enabled = false },
 	-- Faster search navigation?
@@ -24,9 +24,9 @@ return {
 	--{ "folke/noice.nvim", enabled = false },
 	--[[
 	{ "williamboman/mason.nvim", enabled = false },
-	{ "echasnovski/mini.comment", enabled = false },
-	{ "echasnovski/mini.ai", enabled = false },
-	{ "echasnovski/mini.indentscope", enabled = false },
+	{ "nvim-mini/mini.comment", enabled = false },
+	{ "nvim-mini/mini.ai", enabled = false },
+	{ "nvim-mini/mini.indentscope", enabled = false },
 	{ "mfussenegger/nvim-lint", enabled = false },
 	{ "windwp/nvim-cmp", enabled = false },
 	{ "nvim-treesitter/nvim-treesitter", enabled = false },
