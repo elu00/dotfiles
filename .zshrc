@@ -96,8 +96,8 @@ colors
 # ignore auxilliary tex files in nvim autocomplete
 zstyle ':completion:*:*:nvim:*' file-patterns '^*.(aux|fdb_latexmk|fls|synctex.gz|log|pdf|toc|bcf|bbl|blg|out|xdv|run.xml|nav|snm):source-files' '*:all-files'
 
-cdpath+="/home/elu/math"
-cdpath+="/home/elu/repos"
+cdpath+=("$HOME/math")
+cdpath+=("$HOME/repos")
 # Set terminal window and tab/icon title
 #
 # usage: title short_tab_title [long_window_title]

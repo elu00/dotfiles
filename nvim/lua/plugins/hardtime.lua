@@ -10,6 +10,7 @@ return {
 				["<Left>"] = {},
 				["<Right>"] = {},
 			},
+			max_count = 6,
 		},
 	},
 }
