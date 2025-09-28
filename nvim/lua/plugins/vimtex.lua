@@ -31,7 +31,9 @@ return {
 		init = function()
 			vim.g.vimtex_quickfix_open_on_warning = 0
 			vim.g.vimtex_fold_enabled = true
-			if vim.fn.has("wsl") ~= 0 then
+			if vim.fn.has("macunix") ~= 0 then
+				vim.g.vimtex_view_method = "skim"
+			elseif vim.fn.has("wsl") ~= 0 then
 				vim.g.vimtex_view_sioyek_exe = "sioyek.exe"
 				vim.g.vimtex_view_method = "sioyek"
 				vim.g.vimtex_callback_progpath = "wsl nvim"

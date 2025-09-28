@@ -22,6 +22,11 @@ echo 'source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh' >>~/.zshrc
 sudo cpan YAML::Tiny
 sudo cpan File::HomeDir
 ```
+For texmf on osx
+```
+conf texmf TEXMFHOME "~/Library/texmf:~/Dropbox/computer/localtexmf"
+
+```
 ## Swap backslash and backspace
 ```
 echo -e "keycode 22 = backslash bar \n keycode 51 = BackSpace" | xmodmap - 
