@@ -64,6 +64,7 @@ return {
 				{ name = "ep", mathmode = true, concealchar = "ε" },
 				{ name = "p", mathmode = true, concealchar = "∂" },
 				{ name = "plj", mathmode = true, concealchar = "φ" },
+				{ name = "ls", mathmode = true, concealchar = "≲" },
 				{ name = "D", mathmode = true, concealchar = "ⅅ" },
 				{ name = "div", mathmode = true },
 				{ name = "setminus", mathmode = true, concealchar = [[\]] },
