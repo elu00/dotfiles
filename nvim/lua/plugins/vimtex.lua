@@ -33,6 +33,7 @@ return {
 			vim.g.vimtex_fold_enabled = true
 			if vim.fn.has("macunix") ~= 0 then
 				vim.g.vimtex_view_method = "skim"
+				vim.g.vimtex_view_skim_sync = 1
 			elseif vim.fn.has("wsl") ~= 0 then
 				vim.g.vimtex_view_sioyek_exe = "sioyek.exe"
 				vim.g.vimtex_view_method = "sioyek"

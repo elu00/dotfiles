@@ -54,10 +54,12 @@ return {
 				severity_sort = true,
 			},
 		},
+		--[[
 		init = function()
 			local keys = require("lazyvim.plugins.lsp.keymaps").get()
 			keys[#keys + 1] = { "K", false }
 		end,
+        --]]
 	},
 	--[[{
 		"chrisgrieser/nvim-origami",
