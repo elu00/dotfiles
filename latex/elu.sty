@@ -174,6 +174,17 @@
 \newtheorem{prop}[lem]{Proposition}
 \newtheorem{thm}[lem]{Theorem}
 \newtheorem{remark}[lem]{Remark}
+\AddToHook{env/cor/begin}{\crefalias{lem}{cor}} % cf https://tex.stackexchange.com/a/732053/5001
+\AddToHook{env/defn/begin}{\crefalias{lem}{defn}}
+\AddToHook{env/prop/begin}{\crefalias{lem}{prop}}
+\AddToHook{env/thm/begin}{\crefalias{lem}{thm}}
+\AddToHook{env/remark/begin}{\crefalias{lem}{remark}}
+
+\crefname{cor}{corollary}{corollary's}
+\crefname{defn}{definition}{definition's}
+\crefname{prop}{proposition}{proposition's}
+\crefname{thm}{theorem}{theorem's}
+\crefname{remark}{remark}{remark's}
 
 \newtheorem*{prop*}{Proposition}
 \newtheorem*{thm*}{Theorem}

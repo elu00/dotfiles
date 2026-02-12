@@ -26,4 +26,20 @@ return {
 			}
 		end,
 	},
+	--[[{
+		"zbirenbaum/copilot.lua",
+		opts = {
+			filetypes = {
+				python = true, -- allow specific filetype
+				cpp = true, -- allow specific filetype
+				["*"] = false, -- disable for all other filetypes and ignore default `filetypes`
+			},
+			server = {
+				type = "binary",
+				--custom_server_filepath = "/home/user/copilot-lsp/language-server.js",
+			},
+		},
+	},
+    ]]
+	--
 }
