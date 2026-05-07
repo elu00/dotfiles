@@ -83,6 +83,10 @@ return {
 				{ name = "abs", mathmode = 1, cchar_open = "|", cchar_close = "|" },
 				{ name = "np", mathmode = 1, cchar_open = "(", cchar_close = ")" },
 			}
+			vim.g.vimtex_env_toggle_math_map = {
+				["\\["] = "align",
+				["align"] = "\\[",
+			}
 			-- add which-key mapping descriptions for VimTex
 			local wk = require("which-key")
 			wk.add({
