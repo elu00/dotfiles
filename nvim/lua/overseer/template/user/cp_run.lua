@@ -1,17 +1,23 @@
 return {
 	name = "cp_run",
 	builder = function()
-		-- Full path to current file (see :help expand())
 		local file = vim.fn.expand("%:p")
+		local cmd
+
 		if vim.bo.filetype == "python" then
-			return {
-				cmd = { "python3", file, "<", "meme.txt" },
-			}
+			cmd = string.format('python3 "%s" < meme.txt', file)
 		else
-			return {
-				cmd = { "g++", "-std=c++17", "-g", file, "&&", "./a.out", "<", "meme.txt" },
-			}
+			cmd = string.format('g++ -std=c++17 -g "%s" && ./a.out < meme.txt', file)
 		end
+
+		return {
+			cmd = cmd,
+			-- Use standard components to open the split instead of toggleterm strategy
+			components = {
+				"default",
+				{ "open_output", direction = "horizontal", on_start = "always" },
+			},
+		}
 	end,
 	condition = {
 		filetype = { "cpp", "python" },
