@@ -364,7 +364,8 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "catppuccin",
+			-- Use the plugin, not Neovim's built-in catppuccin colorscheme.
+			colorscheme = "catppuccin-nvim",
 		},
 	},
 }
